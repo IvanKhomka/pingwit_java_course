@@ -1,4 +1,4 @@
-package com.pingwit.part2;
+package com.pingwit_java_course.part2;
 
 public class GitExample {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.pingwit.part1;
+package com.pingwit_java_course.part1;
 
 public class ShortenedExample {
     public static void main(String[] args) {
