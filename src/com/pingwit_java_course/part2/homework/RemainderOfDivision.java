@@ -1,4 +1,4 @@
-package com.pingwit_java_course.part2;
+package com.pingwit_java_course.part2.homework;
 
 public class RemainderOfDivision {
     public static void main(String[] args) {
