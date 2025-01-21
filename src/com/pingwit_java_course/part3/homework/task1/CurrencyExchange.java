@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class CurrencyExchange {
     public static void main(String[] args) {
 
-        double PlnRate = 4.1;
-        double EurRate = 0.9;
+        double PlnRate = 4.1; // plnRate - стиль называется camelCase и первое слово всегда с маленькой буквы, даже если это имя собственное
+        double EurRate = 0.9; // eurRate
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // sc - с сокращениями стоит быть очень аккуратным, лучше просто scanner
         System.out.println("Enter currency Id: 1 for PLN, 2 for EUR");
         int currencyId = sc.nextInt();
 
