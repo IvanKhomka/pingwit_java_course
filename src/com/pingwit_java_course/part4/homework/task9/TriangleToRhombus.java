@@ -4,7 +4,7 @@ public class TriangleToRhombus {
     public static void main(String[] args) {
 
         for (int i = 1; i <= 4; i++) {
-            for (int k = 1; k <= 4-i; k++) {
+            for (int k = 1; k <= 4 - i; k++) {
                 System.out.print(" ");
             }
             for (int j = 1; j <= i; j++) {
@@ -16,7 +16,7 @@ public class TriangleToRhombus {
             System.out.println();
         }
         for (int i = 1; i <= 4; i++) {
-            for (int k = 2; k >= 4-i; k--) {
+            for (int k = 2; k >= 4 - i; k--) {
                 System.out.print(" ");
             }
             for (int j = 4; j >= i; j--) {
