@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class ButterflyDraw {
     public static void main(String[] args) {
+        /*
+        Хороший результат, давай попробуем уменьшить кол-во циклов до 4х
+        Т.е. сначала печатаем верхнюю часть бабочки, затем нижнюю. Удачи :)
+         */
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter size of butterfly from 1 to 9, please: ");
         int size = scanner.nextInt();
