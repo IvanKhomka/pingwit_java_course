@@ -4,37 +4,50 @@ import java.util.Scanner;
 
 public class ButterflyDraw {
     public static void main(String[] args) {
-        /*
-        Хороший результат, давай попробуем уменьшить кол-во циклов до 4х
-        Т.е. сначала печатаем верхнюю часть бабочки, затем нижнюю. Удачи :)
-         */
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter size of butterfly from 1 to 9, please: ");
         int size = scanner.nextInt();
 
-        for (int i = 1; i <= size; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(j);
+        int leftPart = 1;
+        int rightPart = size * 2 - 1;
+        int tab;
+
+        for (int i = 0; i < size; i++) {
+            tab = 1;
+            for (int j = 0; j < size * 2; j++) {
+                if (j < leftPart) {
+                    System.out.print(tab);
+                    tab++;
+                } else if (j < rightPart) {
+                    System.out.print(" ");
+                } else {
+                    tab--;
+                    System.out.print(tab);
+                }
             }
-            for (int j = 1; j <= (size - i) * 2; j++) {
-                System.out.print(" ");
-            }
-            for (int j = i; j >= 1; j--) {
-                System.out.print(j);
-            }
+            leftPart++;
+            rightPart--;
             System.out.println();
         }
 
-        for (int i = size; i >= 1; i--) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(j);
+        leftPart = size - 1;
+        rightPart = size + 1;
+
+        for (int i = 0; i < size; i++) {
+            tab = 1;
+            for (int j = 0; j < size * 2; j++) {
+                if (j < leftPart) {
+                    System.out.print(tab);
+                    tab++;
+                } else if (j < rightPart) {
+                    System.out.print(" ");
+                } else {
+                    tab--;
+                    System.out.print(tab);
+                }
             }
-            for (int j = 1; j <= (size - i) * 2; j++) {
-                System.out.print(" ");
-            }
-            for (int j = i; j >= 1; j--) {
-                System.out.print(j);
-            }
+            leftPart--;
+            rightPart++;
             System.out.println();
         }
     }
