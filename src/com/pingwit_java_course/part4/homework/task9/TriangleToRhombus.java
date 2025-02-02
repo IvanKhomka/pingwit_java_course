@@ -18,7 +18,7 @@ public class TriangleToRhombus {
             if (i < size - 1) {
                 tab--;
                 symbols++;
-            } else if (i == size - 1) {
+            } else if (i == size - 1) { // пустой if
             } else {
                 tab++;
                 symbols--;

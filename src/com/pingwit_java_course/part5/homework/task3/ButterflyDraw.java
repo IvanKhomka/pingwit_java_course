@@ -12,6 +12,7 @@ public class ButterflyDraw {
         int rightPart = size * 2 - 1;
         int tab;
 
+        // можешь оставить в таком виде, но ты в одном шаге от 3х циклов. Но это не принципиально
         for (int i = 0; i < size; i++) {
             tab = 1;
             for (int j = 0; j < size * 2; j++) {
