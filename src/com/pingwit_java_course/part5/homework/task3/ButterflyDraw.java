@@ -13,6 +13,7 @@ public class ButterflyDraw {
         int tab;
 
         // можешь оставить в таком виде, но ты в одном шаге от 3х циклов. Но это не принципиально
+        // оставлю в таком виде
         for (int i = 0; i < size; i++) {
             tab = 1;
             for (int j = 0; j < size * 2; j++) {

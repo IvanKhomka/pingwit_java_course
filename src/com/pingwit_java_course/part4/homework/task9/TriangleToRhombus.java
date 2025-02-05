@@ -3,7 +3,7 @@ package com.pingwit_java_course.part4.homework.task9;
 public class TriangleToRhombus {
     public static void main(String[] args) {
 
-        int size = 5;
+        int size = 3;
         int tab = size - 1;
         int symbols = size;
 
@@ -18,7 +18,8 @@ public class TriangleToRhombus {
             if (i < size - 1) {
                 tab--;
                 symbols++;
-            } else if (i == size - 1) { // пустой if
+            } else if (i == tab) {
+                tab = size - 1;
             } else {
                 tab++;
                 symbols--;
