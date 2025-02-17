@@ -7,10 +7,11 @@ public class BubbleSort {
         int[] array = {7, 14, 32, -8, 982, 8, 2150, -99, 86};
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1 - i; j++) {
-                if (array[j] > array[j + 1]) { // j + 1 -> можно вынести в переменную
+                int count = j + 1;
+                if (array[j] > array[count]) {
                     int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    array[j] = array[count];
+                    array[count] = temp;
                 }
             }
         }

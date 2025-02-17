@@ -4,22 +4,24 @@ import java.util.Scanner;
 
 public class UserArray {
     public static void main(String[] args) {
-        Scanner myScannerArray = new Scanner(System.in); // myScannerArray - не ошибка, но можно просто scanner
-        int[] myIntArray = new int[5]; // myIntArray -> numbers
-        for (int i = 0; i < myIntArray.length; i++) { // если поставишь абзац после 8ой строки, код будет приятнее читать
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = new int[5];
+
+        for (int i = 0; i < numbers.length; i++) {
             System.out.println("Please, enter the number: ");
-            myIntArray[i] = myScannerArray.nextInt();
-        } // сюда предлагаю тоже абзац добавить как завершение логического блока
-        int min = myIntArray[0];
-        int max = myIntArray[0];
+            numbers[i] = scanner.nextInt();
+        }
+
+        int min = numbers[0];
+        int max = numbers[0];
         int sum = 0;
-        for (int j : myIntArray) { // j -> element, number
-            sum += j;
-            if (j < min) {
-                min = j;
+        for (int element : numbers) {
+            sum += element;
+            if (element < min) {
+                min = element;
             }
-            if (j > max) {
-                max = j;
+            if (element > max) {
+                max = element;
             }
         }
 

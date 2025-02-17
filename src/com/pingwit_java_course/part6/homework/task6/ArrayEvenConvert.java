@@ -15,9 +15,9 @@ public class ArrayEvenConvert {
         }
         int[] evenNumbersFinalArray = new int[evenNumbersCounter];
         int index = 0;
-        for (int i : evenNumbersTempArray) { // обычно в цикле foreach не используют переменные вроде i,j,k. elem - будет хорошим вариантом
-            if (i != 0) {
-                evenNumbersFinalArray[index] = i;
+        for (int elem : evenNumbersTempArray) {
+            if (elem != 0) {
+                evenNumbersFinalArray[index] = elem;
                 index++;
             }
         }

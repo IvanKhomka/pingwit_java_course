@@ -2,7 +2,7 @@ package com.pingwit_java_course.part6.homework.task3;
 
 import java.util.Arrays;
 
-public class OddNumReplace { // OddNumReplace -> OddNumReplacement
+public class OddNumReplacement {
     public static void main(String[] args) {
         int[] array = {7, 21, 32, 33, 14, 52, 64, 20, 88};
         for (int i = 0; i < array.length; i++) {

@@ -5,10 +5,11 @@ import java.util.Arrays;
 public class ArrayInversion {
     public static void main(String[] args) {
         int[] array = {6, 9, 8, 7};
-        for (int i = 0; i < array.length / 2; i++) { // респект за идею бежать до середины
+        for (int i = 0; i < array.length / 2; i++) {
             int temp = array[i];
-            array[i] = array[array.length - i - 1]; // array.length - i - 1 можно вынести в переменную
-            array[array.length - i - 1] = temp;
+            int count = array.length - 1 - i;
+            array[i] = array[count];
+            array[count] = temp;
         }
         System.out.println(Arrays.toString(array));
     }
