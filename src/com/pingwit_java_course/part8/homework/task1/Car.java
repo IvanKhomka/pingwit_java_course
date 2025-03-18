@@ -1,9 +1,9 @@
 package com.pingwit_java_course.part8.homework.task1;
 
 public class Car {
-    String producer;
-    String model;
-    int doorsQuantity;
+    String producer; //private
+    String model; //private
+    int doorsQuantity; //private
 
     public Car(String producer, String model, int doors) {
         this.producer = producer;

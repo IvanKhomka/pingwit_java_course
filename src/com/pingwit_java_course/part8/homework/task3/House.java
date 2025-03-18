@@ -4,7 +4,7 @@ public class House {
     private int floors;
     private int residents;
     private boolean heatingOn;
-    private boolean isApartment;
+    private boolean isApartment; // если добавить новый тип, то булеана уже не хватит. Такие лучше делать String или enum (это будет дальше в курсе)
 
     public House(int floors, int residents, boolean isApartment) {
         this.floors = floors;

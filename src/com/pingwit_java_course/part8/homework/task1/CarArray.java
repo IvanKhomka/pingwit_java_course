@@ -11,7 +11,7 @@ public class CarArray {
         };
 
         for (Car car : cars) {
-            if (car.producer == "Audi") {
+            if (car.producer == "Audi") { // идея подчеркивает '==', попробуй сам разобраться почему
                 System.out.println(car);
                 car.openDoors();
             }
