@@ -8,8 +8,10 @@ public class HouseMain {
         catalog.addHouse(new House(4, 8, true));
         catalog.addHouse(new House(2, 5, false));
         catalog.addHouse(new House(6, 15, true));
-        // если добавишь еще несколько домов в каталог, то на консоли будет странное сообщение
-        // 'Каталог полон, дом не добавлен: 6 этажей, 15 жильцов'
+        catalog.addHouse(new House(6, 15, true));
+        catalog.addHouse(new House(6, 15, true));
+        catalog.addHouse(new House(6, 15, true));
+        catalog.addHouse(new House(6, 15, true));
 
         catalog.enableHeatingForLargeHouses();
     }

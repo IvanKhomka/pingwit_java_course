@@ -2,24 +2,32 @@ package com.pingwit_java_course.part8.homework.task3;
 
 public class HouseCatalog {
     private House[] houses;
-    private int houseCount = 0; // Если хочешь ограничить размер каталога, то это поле стоит переименовать в maxSize
+    private int currentSize = 0;
+    private int floors = 5;
+    private int residents = 10;
 
-    public HouseCatalog(int size) {
-        houses = new House[size];
+    public HouseCatalog(int initialCapacity) {
+        houses = new House[initialCapacity];
     }
 
     public void addHouse(House house) {
-        if (houseCount < houses.length) { // а зачем ограничивать размер каталога?
-            houses[houseCount++] = house;
-        } else {
-            System.out.println("Каталог полон, дом не добавлен: " + house.getFloors() + " этажей, " + house.getResidents() + " жильцов");
+        if (currentSize >= houses.length) {
+            expandCatalog();
         }
+        houses[currentSize++] = house;
+    }
+
+    private void expandCatalog() {
+        int newSize = houses.length * 2;
+        House[] newHouses = new House[newSize];
+        System.arraycopy(houses, 0, newHouses, 0, houses.length);
+        houses = newHouses;
+        System.out.println("Каталог расширен до " + newSize + " домов.");
     }
 
     public void enableHeatingForLargeHouses() {
-        for (int i = 0; i < houseCount; i++) {
-            // 5 и 10 - это магические числа (т.е. без контекста непонятно что они в себе хранят), вынеси их в переменную, чтобы четко было видно их предназначение
-            if (houses[i] != null && houses[i].getFloors() > 5 && houses[i].getResidents() > 10) {
+        for (int i = 0; i < currentSize; i++) {
+            if (houses[i] != null && houses[i].getFloors() > floors && houses[i].getResidents() > residents) {
                 houses[i].enableHeating();
             }
         }
