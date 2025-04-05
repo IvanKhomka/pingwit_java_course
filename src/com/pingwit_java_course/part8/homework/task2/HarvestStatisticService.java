@@ -16,27 +16,25 @@ public class HarvestStatisticService {
                 String currentPlant = harvest.getPlant();
                 BigDecimal harvestWeight = harvest.getWeight();
 
-                boolean found = false;
-                for (int j = 0; j < uniqueCount; j++) {
-                    if (temp[j].getPlant().equals(currentPlant)) {
-                        temp[j] = new HarvestStatistic(
-                                currentPlant,
-                                temp[j].getTotalWeight().add(harvestWeight)
-                        );
-                        found = true;
+                for (int i = 0; i < temp.length; i++) {
+                    HarvestStatistic current = temp[i];
+                    if (current == null) {
+                        temp[i] = new HarvestStatistic(currentPlant, harvestWeight);
+                        uniqueCount++;
+                        break;
+                    } else if (current.getPlant().equals(currentPlant)) {
+                        current.setTotalWeight(current.getTotalWeight().add(harvestWeight));
                         break;
                     }
-                }
-
-                if (!found) {
-                    temp[uniqueCount++] = new HarvestStatistic(currentPlant, harvestWeight);
                 }
             }
         }
 
         HarvestStatistic[] result = new HarvestStatistic[uniqueCount];
-        for (int i = 0; i < uniqueCount; i++) {
+        int i = 0;
+        while (i < uniqueCount) {
             result[i] = temp[i];
+            i++;
         }
 
         return result;
