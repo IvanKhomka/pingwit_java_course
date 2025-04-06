@@ -32,7 +32,7 @@ public class HarvestStatisticService {
 
         HarvestStatistic[] result = new HarvestStatistic[uniqueCount];
         int i = 0;
-        while (i < uniqueCount) {
+        while (i < uniqueCount) { // просто FYI: я не учел размер массива, поэтому здесь проще было бы использовать обычный for, а не while, т.к. все равно нужна доп. переменная 'i'. Можно оставить как есть, это не ошибка
             result[i] = temp[i];
             i++;
         }

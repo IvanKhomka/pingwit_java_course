@@ -4,7 +4,7 @@ public class House {
     private int floors;
     private int residents;
     private boolean heatingOn;
-    private boolean isApartment;
+    private boolean isApartment; // Я прям настаиваю заменить boolean на String или enum
 
     public House(int floors, int residents, boolean isApartment) {
         this.floors = floors;

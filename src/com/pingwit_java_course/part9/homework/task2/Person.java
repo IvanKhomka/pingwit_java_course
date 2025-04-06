@@ -1,7 +1,7 @@
 package com.pingwit_java_course.part9.homework.task2;
 
 public class Person {
-        String firstName;
+        String firstName; // все поля класса должны быть приватными
         String lastName;
         int birthYear;
         Gender gender;
@@ -15,6 +15,7 @@ public class Person {
             this.maritalStatus = maritalStatus;
         }
 
+        // добавляй геттеры сразу на все поля класса, даже если другие данные не используешь. В реальных программах довольно редко увидишь геттер только для 1 поля
         public int getAge() {
             return birthYear;
         }
