@@ -11,7 +11,7 @@ public class PersonMain {
 
         MatchmakingService service = new MatchmakingService();
         for (Person person : people) {
-            service.offerDatingService(person);
+            service.askForDating(person);
         }
     }
 }

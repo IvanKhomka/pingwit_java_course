@@ -15,7 +15,7 @@ public class Warehouse {
 
     public int next() {
         int value = items[currentIndex];
-        currentIndex = (currentIndex + 1) % items.length; // крутая идея
+        currentIndex = (currentIndex + 1) % items.length;
         return value;
     }
 
