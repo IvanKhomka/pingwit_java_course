@@ -1,7 +1,5 @@
 package com.pingwit_java_course.part8.homework.task3;
 
-import com.pingwit_java_course.part9.homework.task2.HouseType;
-
 public class House {
     private int floors;
     private int residents;
@@ -30,12 +28,7 @@ public class House {
     public void enableHeating() {
         if (!heatingOn) {
             heatingOn = true;
-            /* опционально: ты можешь к enum HouseType добавить конструктор и поле name.
-            А в этот метод добавить параметр HouseType houseType
-            Тогда пропадет тернарный оператор ниже, а в System.out.println будешь вызывать houseType.getName()
-             */
-            String type = (houseType == HouseType.APARTMENT) ? "многоэтажке" : "загородном доме";
-            System.out.println("Отопление включено в " + type + " с " + floors + " этажами и " + residents + " жильцами.");
+            System.out.println("Отопление включено в " + houseType.getName() + " с " + floors + " этажами и " + residents + " жильцами.");
         }
     }
 

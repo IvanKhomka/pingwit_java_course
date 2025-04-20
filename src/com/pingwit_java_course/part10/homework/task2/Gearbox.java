@@ -1,10 +1,12 @@
 package com.pingwit_java_course.part10.homework.task2;
 
 public class Gearbox {
-    private int currentGear = 0; // а какое значение будет у поля currentGear если написать private int currentGear;, т.е. без явной инициализации
+    private int currentGear;
+    private static final int MIN_GEAR = 0;
+    private static final int MAX_GEAR = 7;
 
     public void shiftUp() {
-        if (currentGear < 7) { // 7 в константу класса
+        if (currentGear < MAX_GEAR) {
             currentGear++;
             System.out.println("Gear up: " + currentGear);
         } else {
@@ -13,7 +15,7 @@ public class Gearbox {
     }
 
     public void shiftDown() {
-        if (currentGear > 0) { // 0 в константу класса
+        if (currentGear > MIN_GEAR) {
             currentGear--;
             System.out.println("Gear down: " + currentGear);
         } else {
@@ -26,7 +28,7 @@ public class Gearbox {
     }
 
     public void setGear(int gear) {
-        if (gear >= 0 && gear <= 7) { // 0 и 7 в константы класса. У тебя выше уже использовались эти значения, сразу старайся выносить их в поля или константу и не работать с магическими числами
+        if (gear >= MIN_GEAR && gear <= MAX_GEAR) {
             currentGear = gear;
             System.out.println("Gear is set to " + gear);
         }

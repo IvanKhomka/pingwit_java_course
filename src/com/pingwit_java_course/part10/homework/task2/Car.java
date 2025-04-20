@@ -40,9 +40,5 @@ public class Car {
         int speed = gear * 20;
         System.out.println("The car is moving. Current speed: " + speed + " km/h");
     }
-
-    public void setGear(int gear) { // этот метод можно убрать, у тебя еть shiftGearUp/shiftGearDown и в данном случае этого достаточно
-        gearbox.setGear(gear);
-    }
 }
 

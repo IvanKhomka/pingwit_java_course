@@ -12,7 +12,7 @@ public class CarMain {
 
         myCar.drive();
 
-        myCar.setGear(1);
+        myCar.shiftGearUp();
 
         myCar.drive();
 

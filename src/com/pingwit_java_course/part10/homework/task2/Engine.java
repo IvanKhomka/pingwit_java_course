@@ -1,7 +1,7 @@
 package com.pingwit_java_course.part10.homework.task2;
 
 public class Engine {
-    private boolean isRunning = false; // а какое значение будет у поля isRunning если написать private boolean isRunning;, т.е. без явной инициализации
+    private boolean isRunning;
 
     public void start() {
         if (isRunning) {
