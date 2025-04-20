@@ -30,6 +30,10 @@ public class House {
     public void enableHeating() {
         if (!heatingOn) {
             heatingOn = true;
+            /* опционально: ты можешь к enum HouseType добавить конструктор и поле name.
+            А в этот метод добавить параметр HouseType houseType
+            Тогда пропадет тернарный оператор ниже, а в System.out.println будешь вызывать houseType.getName()
+             */
             String type = (houseType == HouseType.APARTMENT) ? "многоэтажке" : "загородном доме";
             System.out.println("Отопление включено в " + type + " с " + floors + " этажами и " + residents + " жильцами.");
         }

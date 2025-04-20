@@ -35,6 +35,6 @@ public class Person {
         return maritalStatus;
     }
 
-
+// лишняя строка, давай удалим
 }
 
