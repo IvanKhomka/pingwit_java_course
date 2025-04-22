@@ -5,7 +5,7 @@ public class BananaMonkey extends Monkey {
     public int countFruits(Tree branch) {
         int count = 0;
         for (FruitType fruit : branch.getFruits()) {
-            if (fruit == FruitType.BANANA) {
+            if (fruit == FruitType.BANANA) { // FruitType.BANANA == fruit
                 count++;
             }
         }

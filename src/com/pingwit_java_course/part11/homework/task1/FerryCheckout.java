@@ -9,11 +9,11 @@ public class FerryCheckout {
         for (Vehicle vehicle : vehicles) {
             int price = 0;
             if (vehicle.getVehicleType() == VehicleType.CARGO) {
-                price = 30;
+                price = 30; // в константу класса
             } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() <= 2) {
-                price = 10;
+                price = 10; // в константу класса
             } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() > 2) {
-                price = 15;
+                price = 15; // в константу класса
             }
             totalPrice += price;
             totalPeople += vehicle.getPeopleOnBoard();
