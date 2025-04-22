@@ -1,9 +1,9 @@
 package com.pingwit_java_course.part10.homework.task2;
 
 public class Gearbox {
-    private int currentGear;
-    private static final int MIN_GEAR = 0; // static поля идут раньше остальных
+    private static final int MIN_GEAR = 0;
     private static final int MAX_GEAR = 7;
+    private int currentGear;
 
     public void shiftUp() {
         if (currentGear < MAX_GEAR) {

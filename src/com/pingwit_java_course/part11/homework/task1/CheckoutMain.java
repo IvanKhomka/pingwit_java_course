@@ -14,6 +14,12 @@ public class CheckoutMain {
 
         FerryAdmission admission = new FerryAdmission();
         admission.isFerryAllowed(vehicles);
+
+        if (admission.isFerryAllowed(vehicles)) {
+            System.out.println("Ferry is allowed to go.");
+        } else {
+            System.out.println("Ferry is NOT allowed to go.");
+        }
     }
 }
 

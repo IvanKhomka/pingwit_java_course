@@ -1,6 +1,9 @@
 package com.pingwit_java_course.part11.homework.task1;
 
 public class FerryCheckout {
+    private static final int CARGO_PRICE = 30;
+    private static final int PASSENGER_VEHICLE_PRICE_UNDER_3 = 10;
+    private static final int PASSENGER_VEHICLE_PRICE_OVER_2 = 15;
 
     public void processVehicles(Vehicle[] vehicles) {
         int totalPrice = 0;
@@ -9,11 +12,11 @@ public class FerryCheckout {
         for (Vehicle vehicle : vehicles) {
             int price = 0;
             if (vehicle.getVehicleType() == VehicleType.CARGO) {
-                price = 30; // в константу класса
+                price = CARGO_PRICE;
             } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() <= 2) {
-                price = 10; // в константу класса
+                price = PASSENGER_VEHICLE_PRICE_UNDER_3;
             } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() > 2) {
-                price = 15; // в константу класса
+                price = PASSENGER_VEHICLE_PRICE_OVER_2;
             }
             totalPrice += price;
             totalPeople += vehicle.getPeopleOnBoard();

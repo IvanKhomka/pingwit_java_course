@@ -4,9 +4,9 @@ public class Tree {
     private final FruitType[] fruits;
     private final Tree[] children;
 
-    public Tree(int fruitCount, int childrenCount) { // проще будет просто принимать два массива
-        this.fruits = new FruitType[fruitCount];
-        this.children = new Tree[childrenCount];
+    public Tree(FruitType[] fruits, Tree[] children) { // проще будет просто принимать два массива
+        this.fruits = fruits;
+        this.children = children;
     }
 
     public void setFruit(int index, FruitType fruit) {

@@ -13,12 +13,6 @@ public class FerryAdmission {
 
         boolean allowed = totalPeople <= 50 && totalWeight < 15000;
 
-        if (allowed) { // этот метод возвращает true/false, т.е. разрешит допуск парома или нет, и затем этот результат ты можешь использовать в методе мейн(), т.е. этот if перенеси в метод мейн()
-            System.out.println("Ferry is allowed to go.");
-        } else {
-            System.out.println("Ferry is NOT allowed to go.");
-        }
-
         return allowed;
     }
 }

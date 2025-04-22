@@ -8,7 +8,8 @@ public enum HouseType {
 
     HouseType(String name) {
         this.name = name;
-    } // здесь абзац
+    }
+
     public String getName() {
         return name;
     }
