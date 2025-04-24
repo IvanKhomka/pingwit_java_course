@@ -13,9 +13,9 @@ public class FerryCheckout {
             int price = 0;
             if (vehicle.getVehicleType() == VehicleType.CARGO) {
                 price = CARGO_PRICE;
-            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() <= 2) {
+            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() <= 2) { // двоечки тоже в константы. Постарайся сразу любые числа, которые ты используешь в сравнениях выносить в константы.
                 price = PASSENGER_VEHICLE_PRICE_UNDER_3;
-            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() > 2) {
+            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() > 2) { // эту тоже
                 price = PASSENGER_VEHICLE_PRICE_OVER_2;
             }
             totalPrice += price;

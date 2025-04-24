@@ -11,7 +11,7 @@ public class FerryAdmission {
             totalWeight += vehicle.getWeight();
         }
 
-        boolean allowed = totalPeople <= 50 && totalWeight < 15000;
+        boolean allowed = totalPeople <= 50 && totalWeight < 15000; // магические числа в константы. Опционально: эту строку можно сократить до return totalPeople <=...
 
         return allowed;
     }
