@@ -4,6 +4,8 @@ public class FerryCheckout {
     private static final int CARGO_PRICE = 30;
     private static final int PASSENGER_VEHICLE_PRICE_UNDER_3 = 10;
     private static final int PASSENGER_VEHICLE_PRICE_OVER_2 = 15;
+    private static final int PASSENGERS_IN_VEHICLE_LIMIT = 2;
+
 
     public void processVehicles(Vehicle[] vehicles) {
         int totalPrice = 0;
@@ -13,9 +15,9 @@ public class FerryCheckout {
             int price = 0;
             if (vehicle.getVehicleType() == VehicleType.CARGO) {
                 price = CARGO_PRICE;
-            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() <= 2) { // двоечки тоже в константы. Постарайся сразу любые числа, которые ты используешь в сравнениях выносить в константы.
+            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() <= PASSENGERS_IN_VEHICLE_LIMIT) {
                 price = PASSENGER_VEHICLE_PRICE_UNDER_3;
-            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() > 2) { // эту тоже
+            } else if (vehicle.getVehicleType() == VehicleType.PASSENGERS && vehicle.getPeopleOnBoard() > PASSENGERS_IN_VEHICLE_LIMIT) {
                 price = PASSENGER_VEHICLE_PRICE_OVER_2;
             }
             totalPrice += price;
@@ -27,4 +29,3 @@ public class FerryCheckout {
         System.out.println("Total passengers on board: " + totalPeople);
     }
 }
-

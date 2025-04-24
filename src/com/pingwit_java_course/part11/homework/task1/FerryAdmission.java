@@ -1,6 +1,8 @@
 package com.pingwit_java_course.part11.homework.task1;
 
 public class FerryAdmission {
+    private static final int MAX_ALLOWED_PEOPLE = 50;
+    private static final int MAX_ALLOWED_WEIGHT = 15000;
 
     public boolean isFerryAllowed(Vehicle[] vehicles) {
         int totalPeople = 0;
@@ -11,9 +13,6 @@ public class FerryAdmission {
             totalWeight += vehicle.getWeight();
         }
 
-        boolean allowed = totalPeople <= 50 && totalWeight < 15000; // магические числа в константы. Опционально: эту строку можно сократить до return totalPeople <=...
-
-        return allowed;
+        return totalPeople <= MAX_ALLOWED_PEOPLE && totalWeight < MAX_ALLOWED_WEIGHT;
     }
 }
-

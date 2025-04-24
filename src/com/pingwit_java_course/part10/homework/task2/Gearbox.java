@@ -2,7 +2,8 @@ package com.pingwit_java_course.part10.homework.task2;
 
 public class Gearbox {
     private static final int MIN_GEAR = 0;
-    private static final int MAX_GEAR = 7; // и финальный штрих - обычно статик поля отделяют абзацем, это не критично, но будет визуально понятнее
+    private static final int MAX_GEAR = 7;
+
     private int currentGear;
 
     public void shiftUp() {
@@ -34,4 +35,3 @@ public class Gearbox {
         }
     }
 }
-
