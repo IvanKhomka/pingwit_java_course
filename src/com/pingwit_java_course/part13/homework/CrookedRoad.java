@@ -12,11 +12,11 @@ public class CrookedRoad {
         long endTime = startTime + seconds * 1000L;
 
         int position = 0;
-        int direction = 1;
+        int direction = 1; // это не ошибка, просто в данном случае тип переменной может быть boolean и меняешь направление через true/false
         int maxOffset = 8;
 
-        while (true) {
-            if (System.currentTimeMillis() >= endTime) {
+        while (true) { // обращай внимание, когда idea подчеркивает что-нибудь. Очень часто хорошие подсказки
+            if (System.currentTimeMillis() >= endTime) { // и финальный штрих - немного измени этот if и подставь вместо (true)
                 break;
             }
 
