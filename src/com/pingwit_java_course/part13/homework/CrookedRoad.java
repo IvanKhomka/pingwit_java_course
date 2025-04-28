@@ -12,22 +12,26 @@ public class CrookedRoad {
         long endTime = startTime + seconds * 1000L;
 
         int position = 0;
-        int direction = 1; // это не ошибка, просто в данном случае тип переменной может быть boolean и меняешь направление через true/false
+        boolean movingRight = true;
         int maxOffset = 8;
 
-        while (true) { // обращай внимание, когда idea подчеркивает что-нибудь. Очень часто хорошие подсказки
-            if (System.currentTimeMillis() >= endTime) { // и финальный штрих - немного измени этот if и подставь вместо (true)
-                break;
-            }
+        while (System.currentTimeMillis() < endTime) {
 
             for (int i = 0; i < position; i++) {
                 System.out.print(" ");
             }
             System.out.println("|| | ||");
 
-            position += direction;
-            if (position == 0 || position == maxOffset) {
-                direction *= -1;
+            if (movingRight) {
+                position++;
+                if (position == maxOffset) {
+                    movingRight = false;
+                }
+            } else {
+                position--;
+                if (position == 0) {
+                    movingRight = true;
+                }
             }
         }
     }
