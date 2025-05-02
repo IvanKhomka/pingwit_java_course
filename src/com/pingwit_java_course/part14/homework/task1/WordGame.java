@@ -5,7 +5,7 @@ public class WordGame {
         String word = "engineering";
         String engine = word.substring(0, 6);
         String ring = word.substring(7);
-        System.out.println("First word: " + engine); // привет от Егорки
+        System.out.println("First word: " + engine);
         System.out.println("Second word: " + ring);
     }
 }
