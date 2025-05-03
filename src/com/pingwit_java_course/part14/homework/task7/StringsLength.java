@@ -5,10 +5,10 @@ public class StringsLength {
         String[] strings = {"Ivan", "Aleksey", "Tatsiana", "Egor", "Anton", "Ilya", "Aleksander"};
         System.out.println("Strings longer than 5 symbols:");
 
-        int hieroglyph = 5; // hieroglyph - а почему такое название переменной?
+        int symbols = 5;
 
         for (String str : strings) {
-            if (str.length() > hieroglyph) {
+            if (str.length() > symbols) {
                 System.out.println(str);
             }
         }

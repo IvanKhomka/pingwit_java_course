@@ -22,23 +22,15 @@ public class ContentOfWords {
         System.out.println("The word 'plan' meets " + planCount + " times");
     }
 
-    /*
-    Давай немного упростим твой вариант. Алгоритм
-    1. Разбиваем весь текст на массив
-    2. Бежим по полученному массиву и считаем кол-во совпадений при помощи метода c******s()
-     */
     public static int countWordOccurrences(String text, String word) {
-        int count = 0;
-        int fromIndex = 0;
-        text = text.toLowerCase();
+        String[] words = text.toLowerCase().split("[^a-zA-Z0-9]+");
         word = word.toLowerCase();
+        int count = 0;
 
-        while ((fromIndex = text.indexOf(word, fromIndex)) != -1) {
-            if ((fromIndex == 0 || !Character.isLetterOrDigit(text.charAt(fromIndex - 1))) &&
-                    (fromIndex + word.length() == text.length() || !Character.isLetterOrDigit(text.charAt(fromIndex + word.length())))) {
+        for (String phrase : words) {
+            if (phrase.contains(word)) {
                 count++;
             }
-            fromIndex += word.length();
         }
         return count;
     }

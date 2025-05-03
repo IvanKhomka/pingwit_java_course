@@ -3,6 +3,9 @@ package com.pingwit_java_course.part14.homework.task6;
 import java.util.Arrays;
 
 public class EngineMarking {
+    private static String ENGINE_VOLUME_FIRST_MARKING = "1.4";
+    private static String ENGINE_VOLUME_SECOND_MARKING = "1.8";
+
     public static void main(String[] args) {
         String[] engines = {
                 "1.4", "1.6", "1.8", "1.4", "1.8",
@@ -10,9 +13,9 @@ public class EngineMarking {
         };
 
         for (int i = 0; i < engines.length; i++) {
-            if (engines[i].equals("1.4")) { // со строками такая же ситуация как и с магическими числами: лучше выносить в переменные или константы класса
+            if (engines[i].equals(ENGINE_VOLUME_FIRST_MARKING)) {
                 engines[i] = "2.0T";
-            } else if (engines[i].equals("1.8")) {
+            } else if (engines[i].equals(ENGINE_VOLUME_SECOND_MARKING)) {
                 engines[i] = "1.8T";
             }
         }
