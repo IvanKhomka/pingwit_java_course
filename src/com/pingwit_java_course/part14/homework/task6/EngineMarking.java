@@ -10,7 +10,7 @@ public class EngineMarking {
         };
 
         for (int i = 0; i < engines.length; i++) {
-            if (engines[i].equals("1.4")) {
+            if (engines[i].equals("1.4")) { // со строками такая же ситуация как и с магическими числами: лучше выносить в переменные или константы класса
                 engines[i] = "2.0T";
             } else if (engines[i].equals("1.8")) {
                 engines[i] = "1.8T";

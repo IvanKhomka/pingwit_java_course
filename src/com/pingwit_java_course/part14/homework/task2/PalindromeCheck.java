@@ -10,6 +10,13 @@ public class PalindromeCheck {
     }
 
     public static boolean isPalindrome(String str) {
+        /* У тебя хорошее решение. Но есть немного проще и эффективнее. По количеству действий:
+        1. str.replaceAll() - пробегаем по всей строке и заменяем символ
+        2. toLowerCase() - если зайти в реализацию, то там тоже цикл
+        3. И финальный цикл когда мы непосредственно проверяем строку на палиндром
+
+        Попробуй найти решение при помощи метода класса StringBuilder
+         */
         String cleanedStr = str.replaceAll("\\s+", "").toLowerCase();
 
         int length = cleanedStr.length();
