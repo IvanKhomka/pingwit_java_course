@@ -3,10 +3,10 @@ package com.pingwit_java_course.part14.homework.task6;
 import java.util.Arrays;
 
 public class EngineMarking {
-    private static final String ENGINE_VOLUME_FIRST_MARKING = "1.4";
-    private static final String ENGINE_VOLUME_SECOND_MARKING = "1.8";
-    private static final String ENGINE_VOLUME_THIRD_MARKING = "2.0T";
-    private static final String ENGINE_VOLUME_FOURTH_MARKING = "1.8T";
+    private static final String ENGINE_VOLUME_1_4 = "1.4";
+    private static final String ENGINE_VOLUME_1_8 = "1.8";
+    private static final String ENGINE_VOLUME_2_0_TURBO = "2.0T";
+    private static final String ENGINE_VOLUME_1_8_TURBO = "1.8T";
 
     public static void main(String[] args) {
         String[] engines = {
@@ -15,10 +15,10 @@ public class EngineMarking {
         };
 
         for (int i = 0; i < engines.length; i++) {
-            if (ENGINE_VOLUME_FIRST_MARKING.equals(engines[i])) {
-                engines[i] = ENGINE_VOLUME_THIRD_MARKING;
-            } else if (ENGINE_VOLUME_SECOND_MARKING.equals(engines[i])) {
-                engines[i] = ENGINE_VOLUME_FOURTH_MARKING;
+            if (ENGINE_VOLUME_1_4.equals(engines[i])) {
+                engines[i] = ENGINE_VOLUME_2_0_TURBO;
+            } else if (ENGINE_VOLUME_1_8.equals(engines[i])) {
+                engines[i] = ENGINE_VOLUME_1_8_TURBO;
             }
         }
         System.out.println("Changed markings: " + Arrays.toString(engines));
