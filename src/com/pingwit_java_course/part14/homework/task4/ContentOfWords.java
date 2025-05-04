@@ -23,11 +23,11 @@ public class ContentOfWords {
     }
 
     public static int countWordOccurrences(String text, String word) {
-        String[] words = text.toLowerCase().split("[^a-zA-Z0-9]+");
+        String[] words = text.toLowerCase().split("[^a-zA-Z0-9]+"); // можно сплит сделать просто по пробелу, знаки препинания останутся, но нам это неважно, т.к. ищем через сontains
         word = word.toLowerCase();
         int count = 0;
 
-        for (String phrase : words) {
+        for (String phrase : words) { // массив words, 1 элемент - word
             if (phrase.contains(word)) {
                 count++;
             }
