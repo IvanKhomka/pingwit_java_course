@@ -3,8 +3,10 @@ package com.pingwit_java_course.part14.homework.task6;
 import java.util.Arrays;
 
 public class EngineMarking {
-    private static String ENGINE_VOLUME_FIRST_MARKING = "1.4"; // добавь final
-    private static String ENGINE_VOLUME_SECOND_MARKING = "1.8"; // добавь final
+    private static final String ENGINE_VOLUME_FIRST_MARKING = "1.4";
+    private static final String ENGINE_VOLUME_SECOND_MARKING = "1.8";
+    private static final String ENGINE_VOLUME_THIRD_MARKING = "2.0T";
+    private static final String ENGINE_VOLUME_FOURTH_MARKING = "1.8T";
 
     public static void main(String[] args) {
         String[] engines = {
@@ -13,10 +15,10 @@ public class EngineMarking {
         };
 
         for (int i = 0; i < engines.length; i++) {
-            if (engines[i].equals(ENGINE_VOLUME_FIRST_MARKING)) { // ENGINE_VOLUME_FIRST_MARKING.equals(engines[i]), чтобы избежать NPE
-                engines[i] = "2.0T"; // 2.0T тоже стоит вынести в константу
-            } else if (engines[i].equals(ENGINE_VOLUME_SECOND_MARKING)) { // ENGINE_VOLUME_SECOND_MARKING.equals(engines[i]), чтобы избежать NPE
-                engines[i] = "1.8T"; // 1.8T тоже стоит вынести в константу
+            if (ENGINE_VOLUME_FIRST_MARKING.equals(engines[i])) {
+                engines[i] = ENGINE_VOLUME_THIRD_MARKING;
+            } else if (ENGINE_VOLUME_SECOND_MARKING.equals(engines[i])) {
+                engines[i] = ENGINE_VOLUME_FOURTH_MARKING;
             }
         }
         System.out.println("Changed markings: " + Arrays.toString(engines));

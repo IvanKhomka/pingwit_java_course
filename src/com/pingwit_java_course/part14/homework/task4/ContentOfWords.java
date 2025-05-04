@@ -22,13 +22,13 @@ public class ContentOfWords {
         System.out.println("The word 'plan' meets " + planCount + " times");
     }
 
-    public static int countWordOccurrences(String text, String word) {
-        String[] words = text.toLowerCase().split("[^a-zA-Z0-9]+"); // можно сплит сделать просто по пробелу, знаки препинания останутся, но нам это неважно, т.к. ищем через сontains
-        word = word.toLowerCase();
+    public static int countWordOccurrences(String text, String targetWord) {
+        String[] words = text.toLowerCase().split(" ");
+        targetWord = targetWord.toLowerCase();
         int count = 0;
 
-        for (String phrase : words) { // массив words, 1 элемент - word
-            if (phrase.contains(word)) {
+        for (String word : words) {
+            if (word.contains(targetWord)) {
                 count++;
             }
         }
