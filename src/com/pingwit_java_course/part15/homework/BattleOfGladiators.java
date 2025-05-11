@@ -3,6 +3,13 @@ package com.pingwit_java_course.part15.homework;
 import java.util.Random;
 import java.util.Scanner;
 
+/* Это хороший код, но я думаю ты готов попробовать сделать его более правильным с точки зрения архитектуры
+Что предлагаю:
+1. Создать класс Player и туда поместить поля с жизнями
+2. Создать класс FightService и там создать методы для нанесения и блокирования ударов
+3. Логику с циклом while можно оставить в методе main()
+*/
+
 public class BattleOfGladiators {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -23,11 +30,11 @@ public class BattleOfGladiators {
         int playerHP = defaultHP;
         int opponentHP = defaultHP;
 
-        while (playerHP > 0 && opponentHP > 0) {
+        while (playerHP > 0 && opponentHP > 0) { // 0 - предлагаю тоже в константу
             try {
                 System.out.println("Choose an attack: 1 - Head kick, 2 - Body kick, 3 - Leg kick");
                 int playerAttack = getValidatedInput(scanner);
-                int opponentBlock = random.nextInt(3) + 1;
+                int opponentBlock = random.nextInt(3) + 1; // 3 магическое число
 
                 if (playerAttack != opponentBlock) {
                     opponentHP--;
@@ -40,7 +47,7 @@ public class BattleOfGladiators {
                     break;
                 }
 
-                int opponentAttack = random.nextInt(3) + 1;
+                int opponentAttack = random.nextInt(3) + 1;// 3 магическое число
                 System.out.println("The enemy is attacking! Select defense: 1 - Upper block, 2 - Middle block, 3 - Lower block");
                 int playerBlock = getValidatedInput(scanner);
 
@@ -67,7 +74,7 @@ public class BattleOfGladiators {
         int input;
         if (scanner.hasNextInt()) {
             input = scanner.nextInt();
-            if (input < 1 || input > 3) {
+            if (input < 1 || input > 3) { // магические числа в константы
                 throw new WrongCommandException("Wrong command. Try again.");
             }
         } else {

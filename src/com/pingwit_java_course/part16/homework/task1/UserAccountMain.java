@@ -30,7 +30,7 @@ public class UserAccountMain {
 
         boolean isValid = validator.validate(user);
 
-        if (isValid) {
+        if (isValid) { // хочется сюда еще else добавить, если пользователь не прошел валидацию
             System.out.println("All data is valid. Account created successfully.");
         }
     }
