@@ -9,8 +9,8 @@ public class FightService {
         this.random = random;
     }
 
-    public int generateRandomMove() {
-        return random.nextInt(3) + 1; // в этот метод передавай аргументом значение bound
+    public int generateRandomMove(int bound) {
+        return random.nextInt(bound) + 1;
     }
 
     public boolean attackHits(int attack, int block) {

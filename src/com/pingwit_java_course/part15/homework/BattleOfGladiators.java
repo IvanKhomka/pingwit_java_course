@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class BattleOfGladiators {
 
     private static final int DEFAULT_HP = 4;
-    private static final int MIN_ATTACK = 1;
-    private static final int MAX_ATTACK = 3;
+    private static final int MIN_MOVE = 1;
+    private static final int MOVE_BOUND = 3;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -32,7 +32,7 @@ public class BattleOfGladiators {
             try {
                 System.out.println("Choose an attack: 1 - Head kick, 2 - Body kick, 3 - Leg kick");
                 int playerAttack = getValidatedInput(scanner);
-                int opponentBlock = fightService.generateRandomMove();
+                int opponentBlock = fightService.generateRandomMove(MOVE_BOUND);
 
                 if (fightService.attackHits(playerAttack, opponentBlock)) {
                     opponent.decreaseHP();
@@ -45,7 +45,7 @@ public class BattleOfGladiators {
                     break;
                 }
 
-                int opponentAttack = fightService.generateRandomMove();
+                int opponentAttack = fightService.generateRandomMove(MOVE_BOUND);
                 System.out.println("The enemy is attacking! Select defense: 1 - Upper block, 2 - Middle block, 3 - Lower block");
                 int playerBlock = getValidatedInput(scanner);
 
@@ -72,7 +72,7 @@ public class BattleOfGladiators {
         int input;
         if (scanner.hasNextInt()) {
             input = scanner.nextInt();
-            if (input < MIN_ATTACK || input > MAX_ATTACK) {
+            if (input < MIN_MOVE || input > MOVE_BOUND) {
                 throw new WrongCommandException("Wrong command. Try again.");
             }
         } else {
