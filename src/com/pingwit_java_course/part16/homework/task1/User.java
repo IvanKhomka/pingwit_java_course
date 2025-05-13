@@ -8,7 +8,6 @@ public class User {
     private String phone;
     private String password;
 
-// лишняя строка, давай удалим
     public User(String username, String firstName, String lastName, String email, String phone, String password) {
         this.username = username;
         this.firstName = firstName;

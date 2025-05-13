@@ -3,57 +3,55 @@ package com.pingwit_java_course.part15.homework;
 import java.util.Random;
 import java.util.Scanner;
 
-/* Это хороший код, но я думаю ты готов попробовать сделать его более правильным с точки зрения архитектуры
-Что предлагаю:
-1. Создать класс Player и туда поместить поля с жизнями
-2. Создать класс FightService и там создать методы для нанесения и блокирования ударов
-3. Логику с циклом while можно оставить в методе main()
-*/
-
 public class BattleOfGladiators {
+
+    private static final int DEFAULT_HP = 4;
+    private static final int MIN_ATTACK = 1;
+    private static final int MAX_ATTACK = 3;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
         System.out.println("Enter your gladiator's name: ");
-        String playerName = scanner.next();
+        String playerName = scanner.nextLine();
 
         String[] opponents = {"Ibrahim", "Avram", "Agnes"};
         String opponentName = opponents[random.nextInt(opponents.length)];
 
-        System.out.println("The battle between: " + playerName + " " + "and " + opponentName + ", begins! ");
+        Player player = new Player(playerName, DEFAULT_HP);
+        Player opponent = new Player(opponentName, DEFAULT_HP);
 
+        FightService fightService = new FightService(random);
+
+        System.out.println("The battle between: " + player.getName() + " and " + opponent.getName() + " begins!");
         System.out.println("Are you ready? Press Enter to begin the battle.");
         scanner.nextLine();
 
-        int defaultHP = 4;
-        int playerHP = defaultHP;
-        int opponentHP = defaultHP;
-
-        while (playerHP > 0 && opponentHP > 0) { // 0 - предлагаю тоже в константу
+        while (player.isAlive() && opponent.isAlive()) {
             try {
                 System.out.println("Choose an attack: 1 - Head kick, 2 - Body kick, 3 - Leg kick");
                 int playerAttack = getValidatedInput(scanner);
-                int opponentBlock = random.nextInt(3) + 1; // 3 магическое число
+                int opponentBlock = fightService.generateRandomMove();
 
-                if (playerAttack != opponentBlock) {
-                    opponentHP--;
-                    System.out.println("Your strike has reached its target! Enemy health: " + opponentHP);
+                if (fightService.attackHits(playerAttack, opponentBlock)) {
+                    opponent.decreaseHP();
+                    System.out.println("Your strike has reached its target! Enemy health: " + opponent.getHp());
                 } else {
                     System.out.println("The enemy successfully blocked your strike.");
                 }
 
-                if (opponentHP == 0) {
+                if (!opponent.isAlive()) {
                     break;
                 }
 
-                int opponentAttack = random.nextInt(3) + 1;// 3 магическое число
+                int opponentAttack = fightService.generateRandomMove();
                 System.out.println("The enemy is attacking! Select defense: 1 - Upper block, 2 - Middle block, 3 - Lower block");
                 int playerBlock = getValidatedInput(scanner);
 
-                if (opponentAttack != playerBlock) {
-                    playerHP--;
-                    System.out.println("You missed a hit! Your health: " + playerHP);
+                if (fightService.attackHits(opponentAttack, playerBlock)) {
+                    player.decreaseHP();
+                    System.out.println("You missed a hit! Your health: " + player.getHp());
                 } else {
                     System.out.println("You successfully blocked an enemy strike.");
                 }
@@ -63,10 +61,10 @@ public class BattleOfGladiators {
             }
         }
 
-        if (playerHP == 0) {
-            System.out.println("You lost. The enemy won!");
-        } else {
+        if (player.isAlive()) {
             System.out.println("You have won! The enemy is defeated.");
+        } else {
+            System.out.println("You lost. The enemy won!");
         }
     }
 
@@ -74,12 +72,12 @@ public class BattleOfGladiators {
         int input;
         if (scanner.hasNextInt()) {
             input = scanner.nextInt();
-            if (input < 1 || input > 3) { // магические числа в константы
+            if (input < MIN_ATTACK || input > MAX_ATTACK) {
                 throw new WrongCommandException("Wrong command. Try again.");
             }
         } else {
             scanner.next();
-            throw new WrongCommandException("Consume invalid input");
+            throw new WrongCommandException("Invalid input. Enter a number between 1 and 3.");
         }
         return input;
     }

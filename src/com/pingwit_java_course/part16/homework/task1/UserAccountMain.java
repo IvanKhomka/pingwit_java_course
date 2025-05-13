@@ -26,12 +26,14 @@ public class UserAccountMain {
         String password = scanner.nextLine();
 
         User user = new User(username, firstName, lastName, email, phone, password);
-        UserValidation validator = new UserValidation();
+        UserValidationService validator = new UserValidationService();
 
         boolean isValid = validator.validate(user);
 
-        if (isValid) { // хочется сюда еще else добавить, если пользователь не прошел валидацию
+        if (isValid) {
             System.out.println("All data is valid. Account created successfully.");
+        } else {
+            System.out.println("Your data is not valid. Account can't be created.");
         }
     }
 }
