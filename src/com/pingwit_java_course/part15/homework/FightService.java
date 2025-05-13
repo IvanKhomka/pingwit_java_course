@@ -10,7 +10,7 @@ public class FightService {
     }
 
     public int generateRandomMove() {
-        return random.nextInt(3) + 1;
+        return random.nextInt(3) + 1; // в этот метод передавай аргументом значение bound
     }
 
     public boolean attackHits(int attack, int block) {
