@@ -18,6 +18,7 @@ public class TimeApplication {
         LocalDate parse2 = LocalDate.parse("23-2022-01", dateTimeFormatter2);
         LocalDate parse3 = LocalDate.parse("15-07-2024", dateTimeFormatter3);
 
+        // на текущую задачу это не влияет, но для читаемости я бы не рекомендовал печатать строки через " ". Читабельнее будет по одному форматтеру в каждый System.out.println()
         System.out.println(dateTimeFormatter.format(parse) + " " + dateTimeFormatter4.format(parse) + " " +
                 dateTimeFormatter5.format(parse) + " " + dateTimeFormatter6.format(parse) + " " + dateTimeFormatter7.format(parse));
 

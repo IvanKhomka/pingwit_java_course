@@ -9,7 +9,7 @@ public class PersonParser {
         String[] personDataArray = data.split("; ");
         Person[] persons = new Person[personDataArray.length];
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-dd-MM"); // это хороший кандидат для константы класса
 
         for (int i = 0; i < personDataArray.length; i++) {
             String[] fields = personDataArray[i].split(",");
@@ -22,7 +22,7 @@ public class PersonParser {
                 persons[i] = new Person(firstName, lastName, passportNumber, birthDate);
             } catch (DateTimeParseException e) {
                 System.out.println("Error parsing date for person: " + personDataArray[i]);
-                persons[i] = null;
+                persons[i] = null; // а для чего эта строка? Только не удаляй, мне нужны обоснования :)
             }
         }
         return persons;
