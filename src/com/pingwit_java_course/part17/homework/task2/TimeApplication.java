@@ -18,15 +18,23 @@ public class TimeApplication {
         LocalDate parse2 = LocalDate.parse("23-2022-01", dateTimeFormatter2);
         LocalDate parse3 = LocalDate.parse("15-07-2024", dateTimeFormatter3);
 
-        // на текущую задачу это не влияет, но для читаемости я бы не рекомендовал печатать строки через " ". Читабельнее будет по одному форматтеру в каждый System.out.println()
-        System.out.println(dateTimeFormatter.format(parse) + " " + dateTimeFormatter4.format(parse) + " " +
-                dateTimeFormatter5.format(parse) + " " + dateTimeFormatter6.format(parse) + " " + dateTimeFormatter7.format(parse));
+        System.out.println(dateTimeFormatter.format(parse));
+        System.out.println(dateTimeFormatter4.format(parse));
+        System.out.println(dateTimeFormatter5.format(parse));
+        System.out.println(dateTimeFormatter6.format(parse));
+        System.out.println(dateTimeFormatter7.format(parse));
 
-        System.out.println(dateTimeFormatter2.format(parse2) + " " + dateTimeFormatter4.format(parse2) + " " +
-                dateTimeFormatter5.format(parse2) + " " + dateTimeFormatter6.format(parse2) + " " + dateTimeFormatter7.format(parse2));
+        System.out.println(dateTimeFormatter2.format(parse2));
+        System.out.println(dateTimeFormatter4.format(parse2));
+        System.out.println(dateTimeFormatter5.format(parse2));
+        System.out.println(dateTimeFormatter6.format(parse2));
+        System.out.println(dateTimeFormatter7.format(parse2));
 
-        System.out.println(dateTimeFormatter3.format(parse3) + " " + dateTimeFormatter4.format(parse3) + " " +
-                dateTimeFormatter5.format(parse3) + " " + dateTimeFormatter6.format(parse3) + " " + dateTimeFormatter7.format(parse3));
+        System.out.println(dateTimeFormatter3.format(parse3));
+        System.out.println(dateTimeFormatter4.format(parse3));
+        System.out.println(dateTimeFormatter5.format(parse3));
+        System.out.println(dateTimeFormatter6.format(parse3));
+        System.out.println(dateTimeFormatter7.format(parse3));
 
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter8 = DateTimeFormatter.ofPattern("dd-MMMM-yyyy, HH:mm");
