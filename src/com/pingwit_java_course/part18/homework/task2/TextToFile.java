@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class TextToFile {
     public static void main(String[] args) {
-        String sentence = "This is the line that will be written into file\n";
+        String sentence = "This is the line that will be written into file\n"; // \n - это не часть текста в данном случае, это часть бизнес логики. Не обязательно записывать каждое предложение с новой строки, это может быть просто пробел
+        // если очень хочешь записывать в файл с новой строки, можно использовать writer.newLine();
         String fileName = "myFile.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
