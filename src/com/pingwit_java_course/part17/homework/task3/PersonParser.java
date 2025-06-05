@@ -22,8 +22,7 @@ public class PersonParser {
                 persons[i] = new Person(firstName, lastName, passportNumber, birthDate);
             } catch (DateTimeParseException e) {
                 System.out.println("Error parsing date for person: " + personDataArray[i]);
-                persons[i] = null; // Как указание, что парсинг для данного индекса провалился, хотя уже понял, что эта строка в целом лишняя
-                // - Верно. Можешь попробовать заменить на некорректную дату и через дебаг увидишь после какой строки код уйдет в блок catch
+                persons[i] = null;
             }
         }
         return persons;

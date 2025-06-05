@@ -5,11 +5,11 @@ import java.io.IOException;
 
 public class SecretFileReader {
     public static void main(String[] args) {
-        String imagePath = "src/com/pingwit_java_course/part18/homework/task4/image.jpg"; // плюсик за использование относительного пути
+        String imagePath = "src/com/pingwit_java_course/part18/homework/task4/image.jpg";
 
         try (RandomAccessFile raf = new RandomAccessFile(imagePath, "r")) {
             byte[] buffer = new byte[(int) raf.length()];
-            raf.readFully(buffer); // в данном случае ок, но вообще опасное дело сразу весь файл в память вычитывать. Если размер файла будет большим, то программа упадет. Лучше читать файл частями
+            raf.readFully(buffer);
 
             String content = new String(buffer);
             int secretIndex = content.indexOf("--SECRET--");

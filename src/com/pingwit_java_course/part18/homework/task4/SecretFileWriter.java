@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class SecretFileWriter {
     public static void main(String[] args) {
-        String secretMessage = "\n--SECRET--\nThis is a secret message from racoon.\n\n"; // интересный вариант, но если совсем заморочиться, можно запомнить байт, с которого началась запись и сколько новых байт было записано
+        String secretMessage = "\n--SECRET--\nThis is a secret message from racoon.\n\n";
         String imagePath = "src/com/pingwit_java_course/part18/homework/task4/image.jpg";
 
         try (FileOutputStream fos = new FileOutputStream(imagePath, true)) {
