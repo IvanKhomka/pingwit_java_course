@@ -7,6 +7,7 @@ public class MotorcycleApp {
 
         Motorcycle moto = new Motorcycle("Yamaha", "R1", new Engine(998, "RRR11111"));
 
+        // а давай попробуем из этих двух блоков try/catch (out и in) сделать приватные методы. Сразу предупрежу сколько всего в несколько итераций превращение будет)
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("moto.ser"))) {
             out.writeObject(moto);
             System.out.println("Motorcycle serialized successfully.");
