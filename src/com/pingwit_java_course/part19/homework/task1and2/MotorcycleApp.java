@@ -4,21 +4,31 @@ import java.io.*;
 
 public class MotorcycleApp {
     public static void main(String[] args) {
-
         Motorcycle moto = new Motorcycle("Yamaha", "R1", new Engine(998, "RRR11111"));
 
-        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("moto.ser"))) {
+        serializeMotorcycle(moto, "moto.ser");
+        Motorcycle deserializedMoto = deserializeMotorcycle("moto.ser");
+
+        if (deserializedMoto != null) {
+            System.out.println("Deserialized Motorcycle: " + deserializedMoto);
+        }
+    }
+
+    private static void serializeMotorcycle(Motorcycle moto, String fileName) {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))) {
             out.writeObject(moto);
             System.out.println("Motorcycle serialized successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("moto.ser"))) {
-            Motorcycle deserializedMoto = (Motorcycle) in.readObject();
-            System.out.println("Deserialized Motorcycle: " + deserializedMoto);
+    private static Motorcycle deserializeMotorcycle(String fileName) {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))) {
+            return (Motorcycle) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }
