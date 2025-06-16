@@ -6,7 +6,7 @@ public class MotorcycleApp {
     public static void main(String[] args) {
         Motorcycle moto = new Motorcycle("Yamaha", "R1", new Engine(998, "RRR11111"));
 
-        serializeMotorcycle(moto, "moto.ser");
+        serializeMotorcycle(moto, "moto.ser"); // "moto.ser" - кандидат для переменной
         Motorcycle deserializedMoto = deserializeMotorcycle("moto.ser");
 
         if (deserializedMoto != null) {

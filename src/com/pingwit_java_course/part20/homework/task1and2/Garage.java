@@ -15,10 +15,10 @@ public class Garage<T extends Car> {
         return cars;
     }
 
-    public int countBlackCars() {
+    public int countBlackCars() { // int countCars(String color). В твоем варианте под каждый цвет нужен будет отдельный метод
         int count = 0;
         for (T car : cars) {
-            if (car.getColor().equals("black")) {
+            if (car.getColor().equals("black")) { //
                 count++;
             }
         }
