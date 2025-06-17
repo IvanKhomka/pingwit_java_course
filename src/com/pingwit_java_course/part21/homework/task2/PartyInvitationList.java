@@ -5,19 +5,19 @@ import java.util.Scanner;
 
 public class PartyInvitationList {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>(); // list -> давай дадим хорошее название переменной
+        ArrayList<String> invitationList = new ArrayList<>();
 
-        list.add("Egorka Egorov");
-        list.add("Ivan Khomich");
-        list.add("Aleksandra Shishkina");
-        list.add("Olga Wojciech");
-        list.add("Billy Ailysh");
+        invitationList.add("Egorka Egorov");
+        invitationList.add("Ivan Khomich");
+        invitationList.add("Aleksandra Shishkina");
+        invitationList.add("Olga Wojciech");
+        invitationList.add("Billy Ailysh");
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter your name:");
         String name = scanner.nextLine();
 
-        if (list.contains(name)) {
+        if (invitationList.contains(name)) {
             System.out.println("Welcome to the party, " + name + "!");
         } else {
             System.out.println("Sorry, " + name + " , your name is not on the invitation list.");

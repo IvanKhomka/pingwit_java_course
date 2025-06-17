@@ -17,8 +17,8 @@ public class GarageMain {
         System.out.println("BMW Garage: " + bmwGarage.getCars());
         System.out.println("Tesla Garage: " + teslaGarage.getCars());
         System.out.println("Car Garage: " + carGarage.getCars());
-        System.out.println("Черных BMW в гараже: " + bmwGarage.countBlackCars());
-        System.out.println("Черных Tesla в гараже: " + teslaGarage.countBlackCars());
-        System.out.println("Черных авто в общем гараже: " + carGarage.countBlackCars());
+        System.out.println("Черных BMW в гараже: " + bmwGarage.countCars("black"));
+        System.out.println("Черных Tesla в гараже: " + teslaGarage.countCars("black"));
+        System.out.println("Черных авто в общем гараже: " + carGarage.countCars("Black"));
     }
 }

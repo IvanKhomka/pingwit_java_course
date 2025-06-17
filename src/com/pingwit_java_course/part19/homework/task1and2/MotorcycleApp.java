@@ -3,11 +3,13 @@ package com.pingwit_java_course.part19.homework.task1and2;
 import java.io.*;
 
 public class MotorcycleApp {
+    private static final String FILENAME = "moto.ser";
+
     public static void main(String[] args) {
         Motorcycle moto = new Motorcycle("Yamaha", "R1", new Engine(998, "RRR11111"));
 
-        serializeMotorcycle(moto, "moto.ser"); // "moto.ser" - кандидат для переменной
-        Motorcycle deserializedMoto = deserializeMotorcycle("moto.ser");
+        serializeMotorcycle(moto, FILENAME);
+        Motorcycle deserializedMoto = deserializeMotorcycle(FILENAME);
 
         if (deserializedMoto != null) {
             System.out.println("Deserialized Motorcycle: " + deserializedMoto);
