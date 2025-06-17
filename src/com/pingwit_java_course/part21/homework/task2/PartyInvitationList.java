@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class PartyInvitationList {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>(); // list -> давай дадим хорошее название переменной
 
         list.add("Egorka Egorov");
         list.add("Ivan Khomich");
