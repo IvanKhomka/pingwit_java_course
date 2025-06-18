@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ArrayAndLinkedListDeleteFromTheBeginning {
     public static void main(String[] args) {
-        int size = 100000;
+        int size = 100_000;
 
         List<Integer> arrayList = new ArrayList<>();
         List<Integer> linkedList = new LinkedList<>();
@@ -16,18 +16,16 @@ public class ArrayAndLinkedListDeleteFromTheBeginning {
             linkedList.add(i);
         }
 
-        List<Integer> arrayListCopy = new ArrayList<>(arrayList);
         long start = System.currentTimeMillis();
-        while (!arrayListCopy.isEmpty()) {
-            arrayListCopy.remove(0);
+        while (!arrayList.isEmpty()) {
+            arrayList.remove(0);
         }
         long end = System.currentTimeMillis();
         System.out.println("ArrayList deleting from the beginning: " + (end - start) + " ms");
 
-        List<Integer> linkedListCopy = new LinkedList<>(linkedList);
         start = System.currentTimeMillis();
-        while (!linkedListCopy.isEmpty()) {
-            linkedListCopy.remove(0);
+        while (!linkedList.isEmpty()) {
+            linkedList.remove(0);
         }
         end = System.currentTimeMillis();
         System.out.println("LinkedList deleting from the beginning: " + (end - start) + " ms");
