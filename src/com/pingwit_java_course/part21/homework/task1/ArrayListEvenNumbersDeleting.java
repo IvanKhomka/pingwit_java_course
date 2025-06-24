@@ -10,12 +10,12 @@ public class ArrayListEvenNumbersDeleting {
             list.add(0, i);
         }
 
-        System.out.println("List after adding elements: ");
+        System.out.println("List after adding elements:");
         System.out.println(list);
 
         list.removeIf(n -> n % 2 == 0);
 
-        System.out.println("List after removing even elements: ");
+        System.out.println("List after removing even elements:");
         System.out.println(list);
     }
 }
