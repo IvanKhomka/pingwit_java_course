@@ -19,10 +19,10 @@ public class VisitorsStorageMain {
         String month = scanner.nextLine();
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM");
-        Map<String, Set<String>> siteToVisitors = new HashMap<>();
+        Map<String, Set<String>> siteToVisitors = new HashMap<>(); // Map<String, Set<String>> по заданию должно быть Map<String, Integer>, давай обновим
 
         for (VisitorsStorage visit: visits) {
-            String visitMonth = visit.getDate().format(formatter);
+            String visitMonth = visit.getDate().format(formatter); // переменная названа visitMonth, а хранит в себе год+месяц. Стоит либо переименовать, либо обновить форматтер.
             if (visitMonth.equals(month)) {
                 siteToVisitors.computeIfAbsent(visit.getWebsiteName(), k -> new HashSet<>()).add(visit.getVisitorName());
             }
