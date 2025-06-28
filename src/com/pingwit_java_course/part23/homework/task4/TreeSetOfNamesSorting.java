@@ -10,8 +10,10 @@ public class TreeSetOfNamesSorting {
                 "Egorka", "Vanya", "Anna", "Halina", "Georgi", "Walter", "Tatiana", "Masha"
         ));
 
-        SortedSet<String> subSet = names.subSet("H", "W");
+        System.out.println(names);
 
-        System.out.println("Names from 'H' to 'W': " + subSet);
+        SortedSet<String> subSet = names.subSet("H", "W"); // очень оригинальное решение, не помню чтобы видел его раньше. Круто
+
+        System.out.println("Names from 'H' to 'W': " + subSet); // Walter не попал в выборку, а должен был
     }
 }

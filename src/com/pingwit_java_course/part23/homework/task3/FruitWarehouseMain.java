@@ -24,14 +24,14 @@ public class FruitWarehouseMain {
 
         for (Map.Entry<String, List<Fruit>> entry : grouped.entrySet()) {
             String type = entry.getKey();
-            List<Fruit> group = entry.getValue();
+            List<Fruit> group = entry.getValue();// group -> commonTypeFruits
 
             double totalWeight = 0;
             for (Fruit fruit : group) {
-                totalWeight += fruit.weight;
+                totalWeight += fruit.weight; // математические операции над даблом лучше не делать, давай переделаем на BigDecimal для точных расчетов
             }
 
-            Collections.sort(group, new Comparator<Fruit>() {
+            Collections.sort(group, new Comparator<Fruit>() { // group.sort(Comparator.comparing(f -> f.name)); - будет более привлекательно. Если хочешь несколько полей, то можно дополнительно вызвать .thenComparing()
                 @Override
                 public int compare(Fruit f1, Fruit f2) {
                     return f1.name.compareTo(f2.name);
