@@ -1,5 +1,6 @@
 package com.pingwit_java_course.part23.homework.task3;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class FruitWarehouseMain {
@@ -16,31 +17,26 @@ public class FruitWarehouseMain {
         Map<String, List<Fruit>> grouped = new HashMap<>();
 
         for (Fruit fruit : fruits) {
-            if (!grouped.containsKey(fruit.type)) {
-                grouped.put(fruit.type, new ArrayList<>());
+            if (!grouped.containsKey(fruit.getType())) {
+                grouped.put(fruit.getType(), new ArrayList<>());
             }
-            grouped.get(fruit.type).add(fruit);
+            grouped.get(fruit.getType()).add(fruit);
         }
 
         for (Map.Entry<String, List<Fruit>> entry : grouped.entrySet()) {
             String type = entry.getKey();
-            List<Fruit> group = entry.getValue();// group -> commonTypeFruits
+            List<Fruit> commonTypeFruits = entry.getValue();
 
-            double totalWeight = 0;
-            for (Fruit fruit : group) {
-                totalWeight += fruit.weight; // математические операции над даблом лучше не делать, давай переделаем на BigDecimal для точных расчетов
+            BigDecimal totalWeight = BigDecimal.ZERO;
+            for (Fruit fruit : commonTypeFruits) {
+                totalWeight = totalWeight.add(BigDecimal.valueOf(fruit.getWeight()));
             }
 
-            Collections.sort(group, new Comparator<Fruit>() { // group.sort(Comparator.comparing(f -> f.name)); - будет более привлекательно. Если хочешь несколько полей, то можно дополнительно вызвать .thenComparing()
-                @Override
-                public int compare(Fruit f1, Fruit f2) {
-                    return f1.name.compareTo(f2.name);
-                }
-            });
+            commonTypeFruits.sort(Comparator.comparing(Fruit::getName));
 
             System.out.println("\nType: " + type);
             System.out.println("Total weight: " + totalWeight + " kg");
-            System.out.println("Fruits: " + group);
+            System.out.println("Fruits: " + commonTypeFruits);
         }
     }
 }

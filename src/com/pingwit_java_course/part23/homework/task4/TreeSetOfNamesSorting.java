@@ -7,13 +7,13 @@ import java.util.TreeSet;
 public class TreeSetOfNamesSorting {
     public static void main(String[] args) {
         TreeSet<String> names = new TreeSet<>(Arrays.asList(
-                "Egorka", "Vanya", "Anna", "Halina", "Georgi", "Walter", "Tatiana", "Masha"
+                "Egorka", "Vanya", "Anna", "Halina", "Georgi", "Walter", "Tatiana", "Masha", "Xenia"
         ));
 
         System.out.println(names);
 
-        SortedSet<String> subSet = names.subSet("H", "W"); // очень оригинальное решение, не помню чтобы видел его раньше. Круто
+        SortedSet<String> subSet = names.subSet("H", "X");
 
-        System.out.println("Names from 'H' to 'W': " + subSet); // Walter не попал в выборку, а должен был
+        System.out.println("Names from 'H' to 'W': " + subSet);
     }
 }

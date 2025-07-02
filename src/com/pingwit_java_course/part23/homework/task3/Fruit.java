@@ -1,14 +1,26 @@
 package com.pingwit_java_course.part23.homework.task3;
 
 public class Fruit {
-    protected String name; // protected -> private
-    protected double weight; // protected -> private
-    protected String type; // protected -> private
+    private String name;
+    private double weight;
+    private String type;
 
     public Fruit(String name, double weight, String type) {
         this.name = name;
         this.weight = weight;
         this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override
