@@ -24,16 +24,7 @@ public class VisitorsStorageMain {
         for (VisitorsStorage visit : visits) {
             String visitYearMonth = visit.getDate().format(formatter);
             if (visitYearMonth.equals(month)) {
-                /*
-                Твой вариант ок, но т.к. ты уже знаком с лямбдами, можно использовать мажорный вариант.
                 siteToVisitors.merge(visit.getWebsiteName(), 1, (oldValue, newValue) -> ++oldValue);
-
-                ключ - visit.getWebsiteName()
-                1 - значение, если такого ключа еще нету в мапе
-                (oldValue, newValue) -> ++oldValue - если ключ есть, то увеличь значение на 1
-
-                * */
-                siteToVisitors.put(visit.getWebsiteName(), siteToVisitors.getOrDefault(visit.getWebsiteName(), 0) + 1);
             }
         }
 
