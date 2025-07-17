@@ -1,6 +1,6 @@
 package com.pingwit_java_course.part24.homework.task4;
 
-public class Order {
+public class Order { // а давай Order сделаем в виде record, будет хорошей практикой
     private Product product;
     private String deliveryAddress;
     private double finalPrice;

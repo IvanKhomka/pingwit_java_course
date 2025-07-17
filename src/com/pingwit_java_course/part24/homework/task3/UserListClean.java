@@ -16,6 +16,7 @@ public class UserListClean {
 
         System.out.println("Перед фильтрацией: " + users);
 
+        // Создай Set и помести туда все буквы, затем у этого Set'a вызови метод contains() - это сильно упростит и сократит код. Что поместить в метод contains попробуй решить сам
         users.removeIf(user -> user.getName().startsWith("A") || user.getName().startsWith("P") || user.getName().startsWith("E"));
 
         System.out.println("Пользователи после фильтрации списка: " + users);

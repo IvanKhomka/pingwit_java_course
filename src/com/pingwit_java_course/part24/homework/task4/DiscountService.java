@@ -10,6 +10,7 @@ public class DiscountService {
     }
 
     private boolean isMarch8() {
+        //Лучше использовать ZonedDate (part 17), вместо Calendar
         Calendar today = Calendar.getInstance();
         return today.get(Calendar.MONTH) == Calendar.MARCH && today.get(Calendar.DAY_OF_MONTH) == 8;
     }
