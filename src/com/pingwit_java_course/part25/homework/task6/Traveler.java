@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Traveler {
     private String name;
-    private List<Country> visits;
+    private List<Country> visits; // visits -> visitedCountries - будет более явно
 
     public Traveler(String name, List<Country> visits) {
         this.name = name;

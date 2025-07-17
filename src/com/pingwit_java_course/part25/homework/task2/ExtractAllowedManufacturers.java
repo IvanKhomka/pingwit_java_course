@@ -16,9 +16,9 @@ public class ExtractAllowedManufacturers {
         Set<String> allowedManufacturers = Set.of("Apple", "Samsung", "Xiaomi");
 
         List<String> manufacturers = phones.stream()
-                .map(phone -> phone.getManufacturer())
+                .map(phone -> phone.getManufacturer()) // не ошибка, но более современный стиль будет phone -> phone.getManufacturer() -> Phone::getManufacturer
                 .filter(allowedManufacturers::contains)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); //.collect(Collectors.toList()) -> toList()
 
         System.out.println("Allowed manufacturers: " + manufacturers);
     }

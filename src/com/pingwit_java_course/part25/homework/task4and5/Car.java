@@ -3,7 +3,7 @@ package com.pingwit_java_course.part25.homework.task4and5;
 public class Car {
     private String model;
     private String manufacturer;
-    private boolean isElectric;
+    private boolean isElectric; // isElectric -> electric
 
     public Car(String model, String manufacturer, boolean isElectric) {
         this.model = model;
