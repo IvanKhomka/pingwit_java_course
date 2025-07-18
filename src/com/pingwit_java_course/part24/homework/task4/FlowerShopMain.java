@@ -19,15 +19,9 @@ public class FlowerShopMain {
                 System.exit(0);
             }
 
-            int choice;
-            try { // давай парсинг вынесем в отдельный метод, а проверку на isValidProductId оставим здесь
-                choice = Integer.parseInt(input);
-                if (!shop.isValidProductId(choice)) {
-                    System.out.println("Такой позиции нет или она недоступна. Попробуйте ещё раз.");
-                    continue;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка ввода. Пожалуйста, введите номер позиции.");
+            Integer choice = parseChoice(input);
+            if (choice == null || !shop.isValidProductId(choice)) {
+                System.out.println("Такой позиции нет или она недоступна. Попробуйте ещё раз.");
                 continue;
             }
 
@@ -36,7 +30,7 @@ public class FlowerShopMain {
 
             System.out.println("Сегодня у вас день рождения? (да/нет): ");
             String birthdayInput = scanner.nextLine();
-            boolean isBirthday = birthdayInput.equalsIgnoreCase("да"); // за использование equalsIgnoreCase плюсик в карму
+            boolean isBirthday = birthdayInput.equalsIgnoreCase("да");
 
             if (discountService.isEligibleForDiscount(isBirthday)) {
                 System.out.println("В честь праздника мы дарим вам скидку 10% на весь заказ!");
@@ -48,8 +42,18 @@ public class FlowerShopMain {
 
             Order order = new Order(product, address, price);
             order.printConfirmation();
-            //если пользователь вводит некорректные данные - программа должна с ними справиться - здесь все ок
-            //если заказ прошел успешно, программа должна сама остановиться - вот это давай добавим
+
+            System.out.println("Спасибо за покупку! До свидания.");
+            System.exit(0);
+        }
+    }
+
+    private static Integer parseChoice(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Ошибка ввода. Пожалуйста, введите номер позиции.");
+            return null;
         }
     }
 }

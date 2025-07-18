@@ -4,18 +4,18 @@ import java.util.List;
 
 public class Traveler {
     private String name;
-    private List<Country> visits; // visits -> visitedCountries - будет более явно
+    private List<Country> visitedCountries;
 
-    public Traveler(String name, List<Country> visits) {
+    public Traveler(String name, List<Country> visitedCountries) {
         this.name = name;
-        this.visits = visits;
+        this.visitedCountries = visitedCountries;
     }
 
     public String getName() {
         return name;
     }
 
-    public List<Country> getVisits() {
-        return visits;
+    public List<Country> getVisitedCountries() {
+        return visitedCountries;
     }
 }

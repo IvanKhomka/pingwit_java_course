@@ -18,9 +18,9 @@ public class GroupCarsByManufacturer {
                 .collect(Collectors.groupingBy(Car::getManufacturer));
 
         System.out.println("Cars grouped by manufacturer:");
-        grouped.forEach((manufacturer, carList) -> { // carList -> cars
+        grouped.forEach((manufacturer, groupedCars) -> { // cars уже есть, поэтому выбрал такое название
             System.out.println("Manufacturer: " + manufacturer);
-            carList.forEach(car -> System.out.println("  " + car.getModel()));
+            groupedCars.forEach(car -> System.out.println("  " + car.getModel()));
         });
     }
 }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class UniqueVisitsToFile {
@@ -14,7 +13,7 @@ public class UniqueVisitsToFile {
                         new Country("France", List.of("Paris", "Lyon")),
                         new Country("Germany", List.of("Berlin", "Munich"))
                 )),
-                new Traveler("Egorka", List.of( // спасибо
+                new Traveler("Egorka", List.of(
                         new Country("France", List.of("Marseille", "Lyon")),
                         new Country("Italy", List.of("Rome", "Milan"))
                 )),
@@ -24,19 +23,11 @@ public class UniqueVisitsToFile {
                 ))
         );
 
-        Set<String> uniqueCities = travelers.stream()
-                .flatMap(traveler -> traveler.getVisits().stream())
-                .flatMap(visit -> visit.getCities().stream())
-                .collect(Collectors.toSet());
-        /*
-        ...
-        .flatMap(visit -> visit.getCities().stream())
-        .distinct()
-        .collect(Collectors.joining(","));
-        и тогда сразу получишь строку вместо Set<String>
-         */
-
-        String result = String.join(", ", uniqueCities);
+        String result = travelers.stream()
+                .flatMap(traveler -> traveler.getVisitedCountries().stream())
+                .flatMap(country -> country.getCities().stream())
+                .distinct()
+                .collect(Collectors.joining(", "));
 
         System.out.println("Unique cities: " + result);
 

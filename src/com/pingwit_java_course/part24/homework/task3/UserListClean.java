@@ -1,7 +1,9 @@
 package com.pingwit_java_course.part24.homework.task3;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class UserListClean {
 
@@ -16,8 +18,12 @@ public class UserListClean {
 
         System.out.println("Перед фильтрацией: " + users);
 
-        // Создай Set и помести туда все буквы, затем у этого Set'a вызови метод contains() - это сильно упростит и сократит код. Что поместить в метод contains попробуй решить сам
-        users.removeIf(user -> user.getName().startsWith("A") || user.getName().startsWith("P") || user.getName().startsWith("E"));
+        Set<Character> lettersToRemove = new HashSet<>();
+        lettersToRemove.add('A');
+        lettersToRemove.add('P');
+        lettersToRemove.add('E');
+
+        users.removeIf(user -> lettersToRemove.contains(user.getName().charAt(0)));
 
         System.out.println("Пользователи после фильтрации списка: " + users);
     }

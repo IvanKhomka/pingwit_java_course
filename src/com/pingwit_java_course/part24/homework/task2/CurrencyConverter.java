@@ -2,7 +2,7 @@ package com.pingwit_java_course.part24.homework.task2;
 
 import java.util.function.Function;
 
-public class Converter { // Converter -> CurrencyConverter
+public class CurrencyConverter {
     public static void main(String[] args) {
         Function<Integer, String> toRublesCorrect = amount -> {
             int lastDigit = amount % 10;
