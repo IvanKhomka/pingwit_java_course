@@ -18,6 +18,7 @@ public class UserListClean {
 
         System.out.println("Перед фильтрацией: " + users);
 
+        //Твой вариант ок, в данном случае хорошо подойдет Set.of(). Помнишь в чем отличие new HashSet<>() и Set.of()?
         Set<Character> lettersToRemove = new HashSet<>();
         lettersToRemove.add('A');
         lettersToRemove.add('P');
