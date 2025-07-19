@@ -1,7 +1,6 @@
 package com.pingwit_java_course.part24.homework.task3;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,11 +17,7 @@ public class UserListClean {
 
         System.out.println("Перед фильтрацией: " + users);
 
-        //Твой вариант ок, в данном случае хорошо подойдет Set.of(). Помнишь в чем отличие new HashSet<>() и Set.of()?
-        Set<Character> lettersToRemove = new HashSet<>();
-        lettersToRemove.add('A');
-        lettersToRemove.add('P');
-        lettersToRemove.add('E');
+        Set<Character> lettersToRemove = Set.of('A', 'P', 'E');
 
         users.removeIf(user -> lettersToRemove.contains(user.getName().charAt(0)));
 
