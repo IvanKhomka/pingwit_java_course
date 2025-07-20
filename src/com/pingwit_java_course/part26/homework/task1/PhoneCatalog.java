@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PhoneCatalog {
     public static void main(String[] args) {
-        List<String> phones = List.of(
+        List<String> phones = List.of( // Это ты знатно поленился :) List<Phones> должен был быть, но можешь оставить так
                 "iPhone 16",
                 "Samsung Galaxy S25 Ultra",
                 "iPhone 15",

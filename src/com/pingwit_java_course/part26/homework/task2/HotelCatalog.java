@@ -16,5 +16,16 @@ public class HotelCatalog {
         Optional<Hotel> bestHotel = hotels.stream()
                 .max(Comparator.comparing(Hotel::rating));
         bestHotel.ifPresent(System.out::println);
+
+        hotels.stream()
+                .max(Comparator.comparing(Hotel::rating))
+                .ifPresent(System.out::println);
+
+        /*
+        Вот так совсем по-взрослому
+        hotels.stream()
+                .max(Comparator.comparing(Hotel::rating))
+                .ifPresent(System.out::println);
+         */
     }
 }
